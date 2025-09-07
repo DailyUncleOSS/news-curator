@@ -1,0 +1,30 @@
+{
+  "name": "news-curator",
+  "version": "0.1.0",
+  "description": "AI-assisted news selection CLI with Supabase + OpenRouter",
+  "private": true,
+  "license": "MIT",
+  "bin": {
+    "news-curator": "bin/news-curator.js"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/index.ts --dry-run",
+    "start": "node dist/index.js",
+    "lint": "echo 'No linter configured'",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.47.10",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
+    "rimraf": "^6.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
