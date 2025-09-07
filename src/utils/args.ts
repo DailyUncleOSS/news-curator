@@ -1,4 +1,4 @@
-export type ArgValue = string | boolean
+export type ArgValue = string | boolean | string[]
 
 export interface ParsedArgs {
   _: string[]
@@ -44,4 +44,3 @@ export function parseArgs(argv: string[]): ParsedArgs {
 export function renderHelp() {
   return `news-curator — AI-assisted news selection\n\nUsage:\n  news-curator [options]\n\nOptions:\n  --hours <n>         Look back N hours (default: 48)\n  --limit <n>         Fetch at most N items (default: 100)\n  --final <k>         Target number to queue (default: 12)\n  --model <name>      OpenRouter model (env OPENROUTER_MODEL)\n  --dry-run           Do not write to DB; print selections\n  --json              Emit JSON logs only\n  --help, -h          Show help\n\nEnvironment:\n  SUPABASE_URL              Supabase project URL (required)\n  SUPABASE_SERVICE_ROLE_KEY Supabase service key (required)\n  OPENROUTER_API_KEY        OpenRouter API key (required)\n  OPENROUTER_MODEL          Default model name\n  NEWS_SELECT_HOURS         Default hours fallback\n  NEWS_SELECT_LIMIT         Default limit fallback\n  NEWS_SELECT_FINAL_K       Default K fallback\n`
 }
-

@@ -1,28 +1,50 @@
 {
   "name": "news-curator",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "AI-assisted news selection CLI with Supabase + OpenRouter",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "bin": {
     "news-curator": "bin/news-curator.js"
   },
   "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DailyUncleOSS/news-curator.git"
+  },
+  "homepage": "https://dailyuncle.com",
+  "author": "DailyUncle OSS",
+  "readmeFilename": "README.md",
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "tsx src/index.ts --dry-run",
     "start": "node dist/index.js",
     "lint": "echo 'No linter configured'",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "prepack": "npm run clean && npm run build",
+    "prepublishOnly": "npm run clean && npm run build"
   },
+  "keywords": [
+    "cli",
+    "news",
+    "supabase",
+    "openrouter",
+    "ai"
+  ],
   "dependencies": {
     "@supabase/supabase-js": "^2.47.10",
     "dotenv": "^16.4.5"
   },
   "devDependencies": {
+    "rimraf": "^6.0.1",
     "tsx": "^4.19.1",
-    "typescript": "^5.6.2",
-    "rimraf": "^6.0.1"
+    "typescript": "^5.6.2"
   },
   "engines": {
     "node": ">=18"

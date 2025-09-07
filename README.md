@@ -31,6 +31,20 @@ Copy `.env.example` to `.env` and fill values:
 ```
 cp .env.example .env
 ```
+### Use via npx (no clone)
+
+You can run the CLI directly without cloning by using npx (uses the published package):
+
+```
+npx news-curator --dry-run
+```
+
+Or install globally:
+
+```
+npm i -g news-curator
+news-curator --dry-run
+```
 ## Live Demo
 https://dailyuncle.com
 ## Configure
@@ -86,6 +100,18 @@ Example (dry‑run):
 
 ```
 news-curator --hours 36 --limit 80 --final 12 --dry-run
+```
+
+## Publishing
+
+For maintainers: the package is configured for npm publish. The build runs automatically on `npm publish`/`npm pack` via `prepack`.
+
+```
+# Update version as needed
+npm version patch
+
+# Publish to npm (unscoped, public)
+npm publish
 ```
 
 ## Supabase schema
@@ -159,4 +185,3 @@ News Curator เป็น CLI ช่วยคัดเลือกข่าว�
 ## License
 
 MIT
-
